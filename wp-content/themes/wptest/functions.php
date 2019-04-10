@@ -20,3 +20,15 @@ function alx_embed_html( $html ) {
  
 add_filter( 'embed_oembed_html', 'alx_embed_html', 10, 3 );
 add_filter( 'video_embed_html', 'alx_embed_html' ); 
+
+
+function tt_hidetitle_class($classes) {
+
+    if ( is_single() || is_page () ) {
+        $classes[] = 'display-none-title';
+    }
+    return $classes;
+
+}
+
+add_filter('post_class', 'tt_hidetitle_class');

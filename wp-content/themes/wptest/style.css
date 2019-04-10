@@ -43,5 +43,15 @@ Description:    This css handles responsive layout design
 .entry-content iframe, 
 .entry-content object, 
 .entry-content embed {
-        max-width: 100%;
+  max-width: 100%;
+}
+
+
+/*
+Author:         Cesar Ferreira
+Description:    This css is used as a filter to hide the title
+*/
+
+.display-none-title .entry-title {
+  display: none;
 }
