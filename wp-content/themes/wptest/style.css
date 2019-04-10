@@ -55,3 +55,18 @@ Description:    This css is used as a filter to hide the title
 .display-none-title .entry-title {
   display: none;
 }
+
+
+/*
+Author:         Cesar Ferreira
+Description:    This css handles the font family change
+*/
+.site-title,
+.sidebar.widget,
+.site-description,
+.widget .widget-title,
+.widget .widget_meta,
+nav.main-navigation,
+body .widget .widget-title { 
+	font-family: Droid Serif ; 
+}
