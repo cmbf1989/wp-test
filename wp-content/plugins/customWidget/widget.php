@@ -22,9 +22,11 @@ class FunFactWidget extends WP_Widget {
     );
     }
 
-	/**
-     * Create widget default form to input data.
-     */
+    /**
+    * Author:         Cesar Ferreira
+    * Description:    Create widget default form to input data.
+    * Arguments:      $instance - $instance holding array of data
+    */
     public function form($instance) {
 
         // Set widget defaults
@@ -45,8 +47,11 @@ class FunFactWidget extends WP_Widget {
     }
 
 	/**
-     * Widget on update, "merge" new data to instance array.
-     */
+    * Author:         Cesar Ferreira
+    * Description:    Widget on update, "merge" new data to instance array.
+    * Arguments:      $new_instance - Holds new data to be saved
+    *                 $old_instance - Holds old data already in the $instance
+    */
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['textarea'] = !empty($new_instance['textarea']) ? wp_kses_post($new_instance['textarea']) : '';
@@ -54,8 +59,12 @@ class FunFactWidget extends WP_Widget {
     }
 
 	/**
-     * Widget on present
-     */
+     *  
+    * Author:         Cesar Ferreira
+    * Description:    Widget function to present data after data is saved.
+    * Arguments:      $args - Extra arguments passed in previous methods.
+    *                 $instance - Holds information about saved data.
+    */
     public function widget($args, $instance) {
 
          // Check the widget options 
@@ -82,7 +91,11 @@ class FunFactWidget extends WP_Widget {
 
 }
 
-// Register the widget
+/**
+* Author:         Cesar Ferreira
+* Description:    Registers widget to be set as a valid widget to activate.
+* Arguments:      
+*/
 function registerFunFactWidget() {
     register_widget( 'FunFactWidget');
 }

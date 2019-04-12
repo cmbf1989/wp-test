@@ -10,7 +10,12 @@ function twentysixteen_parent_theme_enqueue_styles() {
     );
 }
 
-function tt_hidetitle_class($classes) {
+/**
+ * Author:         Cesar Ferreira
+ * Description:    This function adds an extra css class to the title if its the first page.
+ * Arguments:      $classes - Class array list to be added to page-header
+ */
+function hideIntroTitle($classes) {
 
     if ( is_single() || is_page () ) {
         $classes[] = 'display-none-title';
@@ -21,4 +26,4 @@ function tt_hidetitle_class($classes) {
 
 }
 
-add_filter('post_class', 'tt_hidetitle_class');
+add_filter('post_class', 'hideIntroTitle');
