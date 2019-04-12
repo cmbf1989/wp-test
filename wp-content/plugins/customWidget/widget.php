@@ -22,7 +22,9 @@ class FunFactWidget extends WP_Widget {
     );
     }
 
-	// The widget form 
+	/**
+     * Create widget default form to input data.
+     */
     public function form($instance) {
 
         // Set widget defaults
@@ -42,28 +44,30 @@ class FunFactWidget extends WP_Widget {
         
     }
 
-	// Update widget settings
+	/**
+     * Widget on update, "merge" new data to instance array.
+     */
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['textarea'] = !empty($new_instance['textarea']) ? wp_kses_post($new_instance['textarea']) : '';
         return $instance;
     }
 
-	// Display the widget
+	/**
+     * Widget on present
+     */
     public function widget($args, $instance) {
 
          // Check the widget options 
         $textarea = !empty($instance['textarea']) ? $instance['textarea'] : '';
         if (is_category('News')) {
 
-            // WordPress core before_widget hook (always include)
             echo $args['before_widget'];
         
             // Display the widget
             echo '<div class="widget-text wp_widget_plugin_box">';
 
-                // Display widget title if defined
-                
+                // Display widget default title 
                 echo $args['before_title'].self::TITLE.$args['after_title'];
                 
                 // Display textarea field
